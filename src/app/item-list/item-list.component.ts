@@ -35,6 +35,10 @@ export class ItemListComponent {
     });
   }
 
+  async removeList(id: number) {
+    await db.todoLists.where({id}).delete();
+  }
+
   async toggleItem (itemID: number) {
     db.todoItems.where({id: itemID}).modify(item => item.done = !item.done);
   }

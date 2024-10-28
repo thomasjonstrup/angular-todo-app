@@ -28,6 +28,7 @@ export class AppDB extends Dexie {
 
 	async populate () {
 		const todoListId = await db.todoLists.add({
+			id: 0,
 			title: 'To do today'
 		});
 
