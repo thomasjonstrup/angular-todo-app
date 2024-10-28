@@ -28,6 +28,7 @@ export class ItemListComponent {
   }
 
   async addItem() {
+    console.log('this.itemName', this.itemName)
     await db.todoItems.add({
       title: this.itemName,
       todoListId: this.todoList.id || 0,
